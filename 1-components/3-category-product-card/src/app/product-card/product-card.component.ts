@@ -13,14 +13,14 @@ import { IProduct } from 'shared/mocks/1-components/product';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoryProductComponent {
-  @Input()
-  public product = {} as IProduct;
-
   @Output()
   public addToCart = new EventEmitter();
 
   @Output()
   public goToProduct = new EventEmitter();
+
+  @Input()
+  public product = {} as IProduct;
 
   public addToBasket(): void{
     this.addToCart.emit();
